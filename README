@@ -2,7 +2,8 @@ This program will read from a file containing a scene described by the
 Scene Description Language (SDL). It also uses a camera class to allow the user
 to "fly-through" the 3-D scene that is created by the file. The SDL may also
 include mesh files to display. It also is capable of generating a raytraced version
-of the scene that is generated from the SDL file.
+of the scene that is generated from the SDL file. The program was developed in a 
+linux environment, and the makefile will only build the program for linux.
 
 The executable can be run with a few different flags set:
 '-b [num]' or '-B [num]'
