@@ -1,0 +1,31 @@
+This program will read from a file containing a scene described by the
+Scene Description Language (SDL). It also uses a camera class to allow the user
+to "fly-through" the 3-D scene that is created by the file. The SDL may also
+include mesh files to display. It also is capable of generating a raytraced version
+of the scene that is generated from the SDL file.
+
+The executable can be run with a few different flags set:
+'-b [num]' or '-B [num]'
+    Set the block size for the ray tracer to the given number
+'-w [num]' or '-W [num]'
+    Set the width of the screen
+'-h [num]' or '-H [num]'
+    Set the height of the screen
+'-f [filename]' or '-F [filename]'
+    Set the file of the SDL scene you wish to display
+    
+The commands to fly-through the scene are as follows (They are all input from
+the keyboard):
+'w': Move forward down the -Z axis
+'s': Move backward down the +Z axis
+'a': Move to the left down the -X axis
+'d': Move to the right down the +X axis
+'W': Move up the +Y axis
+'S': Move down the -Y axis
+'r': Rotate the scene clockwise around the Z axis
+'R': Rotate the scene counter-clockwise around the Z axis
+'y': Rotate the scene around Y axis at the current eye position clockwise
+'Y': Rotate the scene around Y axis at the current eye position count-clockwise
+'p': Rotate the scene around X axis at the current eye position downwards
+'P': Rotate the scene around X axis at the current eye position up
+'t': Generate the ray traced scene

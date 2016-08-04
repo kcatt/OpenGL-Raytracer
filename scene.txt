@@ -1,0 +1,78 @@
+light 20 60 30 1 1 1
+ambient .7 .7 .7
+diffuse .6 .6 .6
+specular 1 0 0
+specularExponent 1
+
+def tree {
+push emissive 0 .39 0 scale 1 2 1 rotate -90 1 0 0 translate 0 0 .3 taperedCylinder 0 pop
+push emissive 0.55 0.27 0.075 scale .2 1.5 .2 rotate -90 1 0 0 translate 0 0 -.5 taperedCylinder 1 pop
+}
+
+def leg {
+push emissive .8 .8 .8 scale .02 .2 .02 cube pop
+}
+
+def top {
+push emissive .3 .3 .3 scale .4 .02 .4 cube pop
+}
+
+def table {
+push translate -.3 -.3 -.3 use leg pop
+push translate .3 -.3 -.3 use leg pop
+push translate -.3 -.3 .3 use leg pop
+push translate .3 -.3 .3 use leg pop
+push translate 0 -.1 0 use top pop
+! push emissive .1 1 .5 scale .1 .1 .1 translate 0 0 0 teapot pop
+}
+
+def wall {
+push emissive .15 .78 .76 scale .02 1 2 cube pop
+}
+
+def ground {
+push emissive 0.33 0.42 0.18 scale 1 .05 1 cube pop
+}
+
+def roof {
+push emissive .7 .7 .7 translate 2 1 0 rotate 90 0 0 1 scale .02 2 2 cube pop
+}
+
+def doorwall {
+push translate .8 0 2 rotate 90 0 1 0 scale 1 1 .4 use wall pop
+push translate 3.2 0 2 rotate 90 0 1 0 scale 1 1 .4 use wall pop
+}
+
+def house {
+push translate 0 0 0 use wall pop
+push translate 2 0 -2 rotate 90 0 1 0 use wall pop
+push translate 4 0 0 use wall pop
+push emissive 0.55 0.27 0.075 translate 2 -.49 0 scale 2 .05 2 cube pop
+push use roof pop
+push use doorwall pop
+}
+
+def roadtrees {
+push translate 1.5 -.3 0 scale .8 .8 .8 use tree pop
+push translate -1.5 -.3 0 scale .8 .8 .8 use tree pop
+}
+
+def pillar {
+push scale .05 .05 .05 mesh pillar.3vn pop
+push scale .02 .05 .02  translate 0 60 0 mesh dome1.3vn pop
+}
+
+push translate 0 0 15 use roadtrees pop
+push translate 0 0 13 use roadtrees pop
+push translate 0 0 11 use roadtrees pop
+push translate 0 0 9 use roadtrees pop
+push translate 0 0 7 use roadtrees pop
+push translate 0 0 5 use roadtrees pop
+push translate 0 0 3 use roadtrees pop
+push translate 0 0 1 use roadtrees pop
+push scale 20 1 20 translate 0 -.5 0 use ground pop
+push scale 1 1 10 translate 0 -.49 .7 emissive 0.584 0.4 0.0863 scale 1 .05 1 cube pop
+push translate -2 0 -5 use house pop
+! push emissive .086 .169 .584 translate 2 -.5 -1.5 use pillar pop
+! push translate -2 -.5 -1.5 use pillar pop
+push translate 0 0 -5 use table pop
